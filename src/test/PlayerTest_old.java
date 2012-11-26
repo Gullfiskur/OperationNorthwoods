@@ -1,6 +1,9 @@
-import junit.framework.TestCase;
+/*import junit.framework.TestCase;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
 import static org.easymock.EasyMock.replay;
 import static org.easymock.EasyMock.verify;
@@ -8,8 +11,8 @@ import static org.easymock.EasyMock.verify;
 //@RunWith(PowerMockRunner.class)
 //@PrepareForTest(Player.class)
 public class PlayerTest_old extends TestCase {
-    //PowerMock.expectNew(Player.class).andReturn(mockObject);
-    //MockControl control = MockControl.createControl()
+//    PowerMock.expectNew(Player.class).andReturn(mockObject);
+//    MockControl control = MockControl.createControl()
 //    private Player testPlayer = new Player();
 //    private Player expectedPlayer = new Player();
 //    Player mockPlayer = EasyMock.createMock(Player.class);
@@ -55,5 +58,4 @@ public class PlayerTest_old extends TestCase {
         Player.debug();
         verify(mockPlayer);
     }
-
-}
+}   */
