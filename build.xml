@@ -23,7 +23,7 @@
 
     <target name="compile-tests">
         <mkdir dir="target/testclasses"/>
-        <javac  includeantruntime="false" srcdir="${basedir}/test" includes="**/*.java" destdir="target/testclasses">
+        <javac  includeantruntime="false" srcdir="${basedir}/src/test" includes="**/*.java" destdir="target/testclasses">
             <classpath refid="test.classpath.id"/>
         </javac>
     </target>
