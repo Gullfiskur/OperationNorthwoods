@@ -10,6 +10,7 @@ public class Player {
     public int nrOfMoves = 0;
     public boolean isTurn = false;
     private String name = "A";
+    public boolean won = false;
 
     //Default constructor
     public void Player(String name, boolean turn){

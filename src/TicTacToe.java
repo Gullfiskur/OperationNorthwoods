@@ -1,31 +1,42 @@
-import java.util.ArrayList;
 public class TicTacToe {
 
-    public ArrayList<Box> Board = new ArrayList<Box>();
+    public Box[] Board = new Box[9];
     int NrOfGames = 0;
     public String Playmore = "Y";
+    public Player P1 = new Player();
+    public Player P2 = new Player();
+
  
     public void playTicTacToe() {
         //The main function
-        createPlayers();
-        prepairBoard();
-        GaUI GUI = new GaUI();
-        GUI.drawFrame(256,256);
-        GUI.DrawCanvas();
+        while (Playmore != "n" && Playmore != "N") {
+            prepairPlayers();
+            prepairBoard();
+            GaUI GUI = new GaUI();
+            GUI.DrawFrame(256,256);
+            GUI.DrawCanvas();
+            while (!P1.won && !P2.won){ //medan enginn er að vinna
+                if (StdDraw.mousePressed()) {
+                    double x = StdDraw.mouseX();
+                    double y = StdDraw.mouseY();
+                    GUI.makeMoveMouse(x,y,P1,Board);
+                    //makeMove();
+                    //switchPl();
+                    //DrawToBoard();
+                    checkWin();
+                }
+        }
     }
-
+    }
     private void prepairBoard() {
         int i = 0;
         while (i < 9){
-            Box theBox = new Box();
-            Board.add(theBox);
+            Board[i] = new Box();
             i++;
         }
     }
 
-    public void createPlayers() {
-        Player P1 = new Player();
-        Player P2 = new Player();
+    public void prepairPlayers() {
         P1.setName("Player One");
         P2.setName("Player Two");
         P1.isTurn = true;
