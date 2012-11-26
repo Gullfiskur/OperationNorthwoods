@@ -1,6 +1,6 @@
 import java.util.ArrayList;
-
-public final class TicTacToe {
+import java.util.Scanner;
+public class TicTacToe {
 
     public ArrayList<Box> Board = new ArrayList<Box>();
     int NrOfGames = 0;
@@ -12,6 +12,10 @@ public final class TicTacToe {
         prepairBoard();
         GaUI GUI = new GaUI();
         GUI.drawFrame(256,256);
+        Scanner scan1 = new Scanner(System.in);
+        Playmore = scan1.nextLine();
+        System.out.println(" has won! Do you want to play again (y/n)? ");
+
     }
 
     private void prepairBoard() {

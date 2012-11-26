@@ -33,8 +33,8 @@ public class Player {
         return isTurn;
     }
 
-    public static void debug() {
+    /*public static void debug() {
         System.out.println("Debug");
         Player.debug();
-    }
+    }*/
 }
