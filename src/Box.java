@@ -8,19 +8,24 @@
 //
 public class Box {
 
-	public boolean occupied;
+	private boolean occupied;
 	public Marker mark;
-	public Marker = 1;
 
-	public Boolean occupied() {
-	   return mark;
+	private Boolean occupied() {
+	   return occupied;
 	}
 	
-	public Marker getMarker() {
-	
+	public int getMarker() {
+	    return mark.Marker;
 	}
 	
-	public void place(Object Marker) {
-	
+	public boolean place(Marker x) {
+	    if (!(occupied))
+        {
+        mark = x;
+            return true;
+        }
+           return false;
+
 	}
 }
