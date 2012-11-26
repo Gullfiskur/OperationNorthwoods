@@ -6,11 +6,12 @@ import java.util.ArrayList;
 
 
 public final class TicTacToe {
-    public ArrayList<Box> Board[] = new ArrayList<Box>[];
+    public ArrayList<Box> Board = new ArrayList<Box>();
     public int NrOfGames;
  
     public void playTicTacToe() {
- 
+        //The main function
+        //Board.prepairBoard();
     }
  
     public void createPlayers() {
@@ -26,6 +27,9 @@ public final class TicTacToe {
     }
 
     public void main() {
-
+        System.out.println("Welcome to TicTacToe");
+        TicTacToe newgame = new TicTacToe();
+        newgame.playTicTacToe();
+        System.out.println("Thanks for playing TicTacToe " + newgame.NrOfGames + " times!");
     }
 }
