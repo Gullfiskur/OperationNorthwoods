@@ -8,6 +8,8 @@ import java.util.ArrayList;
 public final class TicTacToe {
     public ArrayList<Box> Board = new ArrayList<Box>();
     public int NrOfGames;
+    Player P1 = new Player();
+    Player P2= new Player();
  
     public void playTicTacToe() {
         //The main function
@@ -23,7 +25,8 @@ public final class TicTacToe {
     }
 
     public void switchPl() {
-
+      P1.changeTurn();
+      P2.changeTurn();
     }
 
     public void main() {
