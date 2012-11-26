@@ -28,7 +28,8 @@ public class Player {
             this.isTurn = true;
         else this.isTurn = false;
     }
-    public boolean isTurn(){
+    public boolean isTurn(boolean turn){
+        this.isTurn = turn;
         return isTurn;
     }
 

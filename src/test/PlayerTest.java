@@ -24,13 +24,13 @@ public class PlayerTest extends TestCase{
     @Test
     public void testChangeTurn() throws Exception { //tests isTurn too
         Player test = new Player();
-        if (test.isTurn() == false){
+        if (test.isTurn == false){
             test.changeTurn();
-            assertEquals(test.isTurn(), true);
+            assertEquals(test.isTurn, true);
         }
-        if (test.isTurn() == true){
+        if (test.isTurn == true){
             test.changeTurn();
-            assertEquals(test.isTurn(), false);
+            assertEquals(test.isTurn, false);
         }
     }
 
