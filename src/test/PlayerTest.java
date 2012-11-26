@@ -1,7 +1,8 @@
-import junit.framework.TestCase;
-import org.junit.Test;
 
-public class PlayerTest extends TestCase{
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class PlayerTest {
     @Test
     public void testPlayer() throws Exception {
         Player test = new Player();
