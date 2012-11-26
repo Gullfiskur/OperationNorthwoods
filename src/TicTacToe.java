@@ -19,10 +19,10 @@ public final class TicTacToe {
     }
 
     public int checkWin() {
-
+              return 0;
     }
 
-    public Player switchPl() {
+    public void switchPl() {
 
     }
 

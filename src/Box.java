@@ -23,7 +23,9 @@ public class Box {
 	    if (!(occupied))
         {
         mark = x;
-            return true;
+        occupied = true;
+
+            return occupied;
         }
            return false;
 
