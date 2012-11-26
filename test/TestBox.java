@@ -8,11 +8,11 @@ public class TestBox extends TestCase {
            //commit
 
 
-    @test
+    @Test
     public void testPlace ()
     {
-          Box boxtest = new box();
-          Marker marktest = new marker();
+          Box boxtest = new Box()
+          Marker marktest = new Marker();
           marktest.Marker = 1;
 
           assertEquals(box.place(mark),true);
