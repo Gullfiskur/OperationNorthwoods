@@ -45,7 +45,7 @@ public class TicTacToe {
         P2.changeTurn();
     }
 
-    public void main() {
+    public static void main(String[] args) {
         System.out.println("Welcome to TicTacToe");
         TicTacToe newgame = new TicTacToe();
         newgame.playTicTacToe();
