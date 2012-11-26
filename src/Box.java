@@ -15,7 +15,7 @@
 public class Box {
 	public boolean occupied;
 	public Marker mark;
-	public Marker 1;
+	public Marker = 1;
 	public bool occupied() {
 	
 	}
