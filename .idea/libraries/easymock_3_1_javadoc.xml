@@ -1,0 +1,26 @@
+<component name="libraryTable">
+  <library name="easymock-3.1-javadoc">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/easymock-3.1-samples.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/easymock-3.1-tests.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/easymock-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/javassist-3.16.1-GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/junit-4.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/junit-dep-4.7.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/objenesis-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/powermock-easymock-1.4.12-full.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/stdlib.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/easymock-3.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/easymock-3.1-samples.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/easymock-3.1-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/easymock-3.1-tests.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/junit-4.7-src.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/powermock-easymock-1.4.12-full.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/stdlib.jar!/" />
+    </SOURCES>
+  </library>
+</component>
