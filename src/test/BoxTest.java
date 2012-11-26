@@ -1,5 +1,3 @@
-import junit.framework.TestCase;
-import org.junit.Before;
 import org.junit.Test;
 
 /**
@@ -9,7 +7,7 @@ import org.junit.Test;
 * Time: 19:24
 * To change this template use File | Settings | File Templates.
 */
-public class BoxTest  extends TestCase{
+public class BoxTest  {
     @Test
     public void testPlace() throws Exception {
         Box boxtest = new Box();
