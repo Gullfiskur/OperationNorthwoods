@@ -9,12 +9,7 @@
 //  @ Project : Untitled
 //  @ File Name : TicTacToe.java
 //  @ Date : 25.11.2012
-//  @ Author : 
-//
-//
-
-   //kjshdflgsdfjlgsdhjlgfsxdjlhgfsjlf
-
+//  @ Author :
 
 public final class TicTacToe {
  public Box Board[9] = new Box[];
