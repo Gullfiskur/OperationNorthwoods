@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 
 /**
 * Created with IntelliJ IDEA.
-* User: Spalli
+* User: Spalli    Ridur hesti
 * Date: 26.11.2012
 * Time: 19:24
 * To change this template use File | Settings | File Templates.
