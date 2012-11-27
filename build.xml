@@ -44,8 +44,8 @@
     </target>
 
     <target name="install">
-        <echo message="Installing helloworld to ${user.home}/temp/helloworld"/>
-        <copy todir="${user.home}/temp/helloworld" overwrite="true">
+        <echo message="Installing TTT to ${user.home}/TTT"/>
+        <copy todir="${user.home}/temp/ttt" overwrite="true">
             <fileset dir="${basedir}/doc">
                 <include name="*"/>
             </fileset>
@@ -58,7 +58,7 @@
         </copy>
         <exec executable="chmod" osfamily="unix">
             <arg value="+xxx"/>
-            <arg value="${user.home}/temp/helloworld/helloworld.sh"/>
+            <arg value="${user.home}/TTT/TTT.sh"/>
         </exec>
     </target>
 	
@@ -77,11 +77,8 @@
     <target name="run" depends="clean, compile, compile-tests, jar">
     <java jar="c:/TicTacToe/TTT.jar" fork="true"/>
     </target>
-    <target name="execute">
-        <exec osfamily="unix" dir="${user.home}/temp/helloworld/" executable="${user.home}/temp/helloworld/helloworld.sh"/>
-        <exec osfamily="windows" dir="${user.home}/temp/helloworld/" executable="${user.home}/temp/helloworld/helloworld.bat"/>
-    </target>
+    
 
-    <target name="all" depends="clean, compile, compile-tests, unittest, install, execute"/>
+    <target name="all" depends="clean, compile, compile-tests, unittest, install"/>
 
 </project>
