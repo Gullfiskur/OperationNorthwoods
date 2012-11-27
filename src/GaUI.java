@@ -1,22 +1,15 @@
 import java.awt.*;
 
 public class GaUI {
-    public void drawMarker(Box X) {
- 
-    }
+
     public void DrawFrame(int X, int Y) {
         StdDraw.setCanvasSize(Y, X);
-        //RectHV Frame = new RectHV(0.0,0.0,1.0,1.0);
-        //StdDraw.setPenColor(StdDraw.DARK_GRAY);
-        //StdDraw.setPenColor(new Color(.5f,.5f,.5f));
-        //StdDraw.setPenRadius(1024);
-        //Frame.draw();
         StdDraw.clear(StdDraw.DARK_GRAY);
         StdDraw.show();
     }
     public void DrawCanvas(){
         StdDraw.clear(StdDraw.DARK_GRAY);
-        StdDraw.setPenRadius(.015*2);
+        StdDraw.setPenRadius(.015*1.5);     //resize 1.5
         StdDraw.setPenColor(StdDraw.WHITE);
         StdDraw.square(.2, .2, .15);
         StdDraw.square(.5, .2, .15);
@@ -43,7 +36,7 @@ public class GaUI {
 
         double fix = .15; //for the size
         StdDraw.setPenRadius(0.002);
-        StdDraw.setPenColor(new Color(.79f,.99f,.79f));
+        //StdDraw.setPenColor(new Color(.79f,.99f,.79f));
         RectHV Frame1 = new RectHV(0.2-fix,0.2-fix,0.2+fix,0.2+fix);
         if (Frame1.contains(mouseXY)){if (P1.isTurn == true){board[0].place(mP1);} else {board[0].place(mP2);}}
         RectHV Frame2 = new RectHV(0.5-fix,0.2-fix,0.5+fix,0.2+fix);
@@ -62,15 +55,7 @@ public class GaUI {
         if (Frame8.contains(mouseXY)){if (P1.isTurn == true){board[7].place(mP1);} else {board[7].place(mP2);}}
         RectHV Frame9 = new RectHV(0.8-fix,0.8-fix,0.8+fix,0.8+fix);
         if (Frame9.contains(mouseXY)){if (P1.isTurn == true){board[8].place(mP1);} else {board[8].place(mP2);}}
-        /*Frame1.draw();
-        Frame2.draw();
-        Frame3.draw();
-        Frame4.draw();
-        Frame5.draw();
-        Frame6.draw();
-        Frame7.draw();
-        Frame8.draw();
-        Frame9.draw();*/
+
         StdDraw.show();
         StdDraw.show(200);
     }
@@ -78,7 +63,7 @@ public class GaUI {
         double fix1 = 0.01;
         double fix = 0.035;
         StdDraw.setPenColor(StdDraw.RED);
-        StdDraw.setFont(new Font("Arial", Font.BOLD, 55*2));
+        StdDraw.setFont(new Font("Arial", Font.BOLD, (int) (65*1.5))); //resize 1.5
         if (board[0].getMarker() == 1)
             StdDraw.text(.20-fix1, .20-fix, "X");
         if (board[1].getMarker() == 1)
@@ -98,7 +83,7 @@ public class GaUI {
         if (board[8].getMarker() == 1)
             StdDraw.text(.80-fix1, .80-fix, "X");
         StdDraw.setPenColor(StdDraw.BLUE);
-        StdDraw.setFont(new Font("Arial", Font.BOLD, 55*2));
+        StdDraw.setFont(new Font("Arial", Font.BOLD, (int) (65*1.5))); //resize 1.5
         if (board[0].getMarker() == 2)
             StdDraw.text(.20-fix1, .20-fix, "O");
         if (board[1].getMarker() == 2)
@@ -118,13 +103,5 @@ public class GaUI {
         if (board[8].getMarker() == 2)
             StdDraw.text(.80-fix1, .80-fix, "O");
         StdDraw.show();
-    }
-
-    public void resetFrame() {
- 
-    }
- 
-    public void mouseListener() {
- 
     }
 }
