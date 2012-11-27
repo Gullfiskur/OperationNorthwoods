@@ -20,9 +20,8 @@ public class TicTacToe {
                     double x = StdDraw.mouseX();
                     double y = StdDraw.mouseY();
                     GUI.makeMoveMouse(x,y,P1,Board);
-                    //makeMove();
-                    //switchPl();
-                    //DrawToBoard();
+                    switchPl(P1,P2);
+                    GUI.DrawToBoard(Board);
                     checkWin();
                 }
         }
@@ -30,8 +29,11 @@ public class TicTacToe {
     }
     private void prepairBoard() {
         int i = 0;
+        //Marker mark = new Marker();
+        //Marker.
         while (i < 9){
             Board[i] = new Box();
+            //Board[i].setMarker(0);
             i++;
         }
     }

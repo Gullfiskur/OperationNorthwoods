@@ -9,12 +9,14 @@
 public class Box {
 
 	private boolean occupied;
-	public Marker mark;
+	public Marker mark = new Marker();
 
 	private Boolean occupied() {
 	   return occupied;
 	}
-
+    public void setMarker(Marker mark) {
+        this.mark = mark;
+    }
 	public int getMarker() {
 	    return mark.Marker;
 	}

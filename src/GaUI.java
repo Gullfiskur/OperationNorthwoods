@@ -33,8 +33,6 @@ public class GaUI {
     }
     public void makeMoveMouse(double x, double y, Player P1, Box[] board) {
 
-        int move = 0;
-
         Marker mP1 = new Marker();
         mP1.Marker = 1;
         Marker mP2 = new Marker();
@@ -42,7 +40,7 @@ public class GaUI {
 
         Point2D mouseXY = new Point2D(x,y);
 
-        double fix = .12; //for the size
+        double fix = .15; //for the size
         StdDraw.setPenRadius(0.002);
         StdDraw.setPenColor(new Color(.79f,.99f,.79f));
         RectHV Frame1 = new RectHV(0.2-fix,0.2-fix,0.2+fix,0.2+fix);
@@ -63,7 +61,7 @@ public class GaUI {
         if (Frame8.contains(mouseXY)){if (P1.isTurn == true){board[7].place(mP1);} else {board[7].place(mP2);}}
         RectHV Frame9 = new RectHV(0.8-fix,0.8-fix,0.8+fix,0.8+fix);
         if (Frame9.contains(mouseXY)){if (P1.isTurn == true){board[8].place(mP1);} else {board[8].place(mP2);}}
-        Frame1.draw();
+        /*Frame1.draw();
         Frame2.draw();
         Frame3.draw();
         Frame4.draw();
@@ -71,11 +69,55 @@ public class GaUI {
         Frame6.draw();
         Frame7.draw();
         Frame8.draw();
-        Frame9.draw();
+        Frame9.draw();*/
         StdDraw.show();
-        StdDraw.show(150);
+        StdDraw.show(200);
     }
-
+    public void DrawToBoard(Box[] board){
+        double fix1 = 0.01;
+        double fix = 0.035;
+        StdDraw.setPenColor(StdDraw.RED);
+        StdDraw.setFont(new Font("Arial", Font.BOLD, 55));
+        if (board[0].getMarker() == 1)
+            StdDraw.text(.20-fix1, .20-fix, "X");
+        if (board[1].getMarker() == 1)
+            StdDraw.text(.50-fix1, .20-fix, "X");
+        if (board[2].getMarker() == 1)
+            StdDraw.text(.80-fix1, .20-fix, "X");
+        if (board[3].getMarker() == 1)
+            StdDraw.text(.20-fix1, .50-fix, "X");
+        if (board[4].getMarker() == 1)
+            StdDraw.text(.50-fix1, .50-fix, "X");
+        if (board[5].getMarker() == 1)
+            StdDraw.text(.80-fix1, .50-fix, "X");
+        if (board[6].getMarker() == 1)
+            StdDraw.text(.20-fix1, .80-fix, "X");
+        if (board[7].getMarker() == 1)
+            StdDraw.text(.50-fix1, .80-fix, "X");
+        if (board[8].getMarker() == 1)
+            StdDraw.text(.80-fix1, .80-fix, "X");
+        StdDraw.setPenColor(StdDraw.BLUE);
+        StdDraw.setFont(new Font("Arial", Font.BOLD, 55));
+        if (board[0].getMarker() == 2)
+            StdDraw.text(.20-fix1, .20-fix, "O");
+        if (board[1].getMarker() == 2)
+            StdDraw.text(.50-fix1, .20-fix, "O");
+        if (board[2].getMarker() == 2)
+            StdDraw.text(.80-fix1, .20-fix, "O");
+        if (board[3].getMarker() == 2)
+            StdDraw.text(.20-fix1, .50-fix, "O");
+        if (board[4].getMarker() == 2)
+            StdDraw.text(.50-fix1, .50-fix, "O");
+        if (board[5].getMarker() == 2)
+            StdDraw.text(.80-fix1, .50-fix, "O");
+        if (board[6].getMarker() == 2)
+            StdDraw.text(.20-fix1, .80-fix, "O");
+        if (board[7].getMarker() == 2)
+            StdDraw.text(.50-fix1, .80-fix, "O");
+        if (board[8].getMarker() == 2)
+            StdDraw.text(.80-fix1, .80-fix, "O");
+        StdDraw.show();
+    }
 
     public void resetFrame() {
  
