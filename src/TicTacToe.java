@@ -14,8 +14,8 @@ public class TicTacToe {
         GaUI GUI = new GaUI();
         GUI.DrawFrame(450,450);
 
-        boolean play = true;
-        while (play) {
+       // boolean play = true;
+        //while (play) {
             prepairPlayers();
             prepairBoard();
             GUI.DrawCanvas();
@@ -37,13 +37,21 @@ public class TicTacToe {
 
                 }
             }
-            play = false;
+            if(P1.won){System.out.println("Player X won");}
+            else if(P2.won){System.out.println("Player O won");}
+            else{System.out.println("Draw");}
+                System.exit(0);
+            //}
+           /* play = false;
             Buttons b = new Buttons();
+            boolean foo;
+            foo = b.playAgain();
             if(b.retry) {
-                play = true;
-        }
+                play = true; */
+
     }
-    }
+
+
     public void prepairBoard() {
         int i = 0;
         NrOfMoves = 0;
@@ -110,4 +118,6 @@ public class TicTacToe {
         newgame.playTicTacToe();
         //System.out.println("Thanks for playing ");
     }
+
+
 }
