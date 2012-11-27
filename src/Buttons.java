@@ -6,7 +6,7 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class Buttons extends JFrame implements ActionListener{
 
-boolean retry;
+public boolean retry;
 
     public Buttons(){
         //setSize(300,400);
@@ -30,10 +30,14 @@ boolean retry;
     }
     public void  actionPerformed(ActionEvent a) {
            if ("play".equals(a.getActionCommand()))  {
-           retry = true;
-           if("stop".equals(a.getActionCommand())) {
-               System.out.println("Welcome to TicTacToe");
+             this.retry = true;
+
+               System.out.println("Play Again");
+
            }
-            }
+           if("stop".equals(a.getActionCommand())) {
+               System.out.println("Cancel");
+           }
+
         }
     }
