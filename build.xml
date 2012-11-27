@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="TTT" default="compile" basedir=".">
 	
-	 <target name="jar" depends="compile">
-    <jar destfile="hello.jar"  includes="**/*.java" destdir="target/classes">
-      <manifest>
-        <attribute name="TicTacToe" value="main" />
-      </manifest>
-    </jar>
-  </target>		
+	  <target name="jar" depends="compile, compile-test" description="create a Jar file for the application">
+        <jar destfile="../TicTacToe/TTT.jar">
+            <fileset dir="${basedir}/target/classes" includes="**/*.class"/>
+            <manifest>
+                <attribute name="TicTacToe" value="TicTacToe.Main"/>
+            </manifest>
+        </jar>
+    </target>
 	
     <target name="clean">
         <delete dir="target" failonerror="true"/>
