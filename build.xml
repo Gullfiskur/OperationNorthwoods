@@ -2,7 +2,7 @@
 <project name="mylla" default="all">
   
   
-  <property file="mylla.properties"/>
+  <property file="build.properties"/>
   <!-- Uncomment the following property if no tests compilation is needed -->
   <!-- 
   <property name="skip.tests" value="true"/>
@@ -129,97 +129,7 @@
   
   <!-- Modules -->
   
-  
-  <!-- Module OperationNorthwoods -->
-  
-  <dirname property="module.operationnorthwoods.basedir" file="${ant.file}"/>
-  
-  
-  <property name="module.jdk.home.operationnorthwoods" value="${project.jdk.home}"/>
-  <property name="module.jdk.bin.operationnorthwoods" value="${project.jdk.bin}"/>
-  <property name="module.jdk.classpath.operationnorthwoods" value="${project.jdk.classpath}"/>
-  
-  <property name="compiler.args.operationnorthwoods" value="${compiler.args}"/>
-  
-  <property name="operationnorthwoods.output.dir" value="${module.operationnorthwoods.basedir}/out/production/OperationNorthwoods"/>
-  <property name="operationnorthwoods.testoutput.dir" value="${module.operationnorthwoods.basedir}/out/test/OperationNorthwoods"/>
-  
-  <path id="operationnorthwoods.module.bootclasspath">
-    <!-- Paths to be included in compilation bootclasspath -->
-  </path>
-  
-  <path id="operationnorthwoods.module.production.classpath">
-    <path refid="${module.jdk.classpath.operationnorthwoods}"/>
-    <path refid="library.algs4.classpath"/>
-    <path refid="library.cglib-nodep-2.2.3.classpath"/>
-    <path refid="library.easymock-3.1-javadoc.classpath"/>
-  </path>
-  
-  <path id="operationnorthwoods.runtime.production.module.classpath">
-    <pathelement location="${operationnorthwoods.output.dir}"/>
-    <path refid="library.algs4.classpath"/>
-    <path refid="library.cglib-nodep-2.2.3.classpath"/>
-    <path refid="library.easymock-3.1-javadoc.classpath"/>
-  </path>
-  
-  <path id="operationnorthwoods.module.classpath">
-    <path refid="${module.jdk.classpath.operationnorthwoods}"/>
-    <pathelement location="${operationnorthwoods.output.dir}"/>
-    <path refid="library.algs4.classpath"/>
-    <path refid="library.cglib-nodep-2.2.3.classpath"/>
-    <path refid="library.easymock-3.1-javadoc.classpath"/>
-  </path>
-  
-  <path id="operationnorthwoods.runtime.module.classpath">
-    <pathelement location="${operationnorthwoods.testoutput.dir}"/>
-    <pathelement location="${operationnorthwoods.output.dir}"/>
-    <path refid="library.algs4.classpath"/>
-    <path refid="library.cglib-nodep-2.2.3.classpath"/>
-    <path refid="library.easymock-3.1-javadoc.classpath"/>
-  </path>
-  
-  
-  <patternset id="excluded.from.module.operationnorthwoods">
-    <patternset refid="ignored.files"/>
-  </patternset>
-  
-  <patternset id="excluded.from.compilation.operationnorthwoods">
-    <patternset refid="excluded.from.module.operationnorthwoods"/>
-  </patternset>
-  
-  <path id="operationnorthwoods.module.sourcepath">
-    <dirset dir="${module.operationnorthwoods.basedir}">
-      <include name="src"/>
-    </dirset>
-  </path>
-  
-  
-  <target name="compile.module.operationnorthwoods" depends="compile.module.operationnorthwoods.production,compile.module.operationnorthwoods.tests" description="Compile module OperationNorthwoods"/>
-  
-  <target name="compile.module.operationnorthwoods.production" depends="register.custom.compilers" description="Compile module OperationNorthwoods; production classes">
-    <mkdir dir="${operationnorthwoods.output.dir}"/>
-    <javac2 destdir="${operationnorthwoods.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.operationnorthwoods}/javac">
-      <compilerarg line="${compiler.args.operationnorthwoods}"/>
-      <bootclasspath refid="operationnorthwoods.module.bootclasspath"/>
-      <classpath refid="operationnorthwoods.module.production.classpath"/>
-      <src refid="operationnorthwoods.module.sourcepath"/>
-      <patternset refid="excluded.from.compilation.operationnorthwoods"/>
-    </javac2>
-    
-    <copy todir="${operationnorthwoods.output.dir}">
-      <fileset dir="${module.operationnorthwoods.basedir}/src">
-        <patternset refid="compiler.resources"/>
-        <type type="file"/>
-      </fileset>
-    </copy>
-  </target>
-  
-  <target name="compile.module.operationnorthwoods.tests" depends="register.custom.compilers,compile.module.operationnorthwoods.production" description="compile module OperationNorthwoods; test classes" unless="skip.tests"/>
-  
-  <target name="clean.module.operationnorthwoods" description="cleanup module">
-    <delete dir="${operationnorthwoods.output.dir}"/>
-    <delete dir="${operationnorthwoods.testoutput.dir}"/>
-  </target>
+  <import file="${basedir}/module_operationnorthwoods.xml"/>
   
   <target name="init" description="Build initialization">
     <!-- Perform any build initialization in this target -->
