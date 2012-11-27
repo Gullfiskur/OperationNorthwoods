@@ -15,7 +15,8 @@ public class GaUI {
         StdDraw.show();
     }
     public void DrawCanvas(){
-        StdDraw.setPenRadius(.015);
+        StdDraw.clear(StdDraw.DARK_GRAY);
+        StdDraw.setPenRadius(.015*2);
         StdDraw.setPenColor(StdDraw.WHITE);
         StdDraw.square(.2, .2, .15);
         StdDraw.square(.5, .2, .15);
@@ -26,7 +27,7 @@ public class GaUI {
         StdDraw.square(.2, .8, .15);
         StdDraw.square(.5, .8, .15);
         StdDraw.square(.8, .8, .15);
-        StdDraw.setPenRadius(.03);
+        StdDraw.setPenRadius(.035);
         StdDraw.setPenColor(StdDraw.DARK_GRAY);
         StdDraw.square(.5, .5, .45);
         StdDraw.show();
@@ -77,7 +78,7 @@ public class GaUI {
         double fix1 = 0.01;
         double fix = 0.035;
         StdDraw.setPenColor(StdDraw.RED);
-        StdDraw.setFont(new Font("Arial", Font.BOLD, 55));
+        StdDraw.setFont(new Font("Arial", Font.BOLD, 55*2));
         if (board[0].getMarker() == 1)
             StdDraw.text(.20-fix1, .20-fix, "X");
         if (board[1].getMarker() == 1)
@@ -97,7 +98,7 @@ public class GaUI {
         if (board[8].getMarker() == 1)
             StdDraw.text(.80-fix1, .80-fix, "X");
         StdDraw.setPenColor(StdDraw.BLUE);
-        StdDraw.setFont(new Font("Arial", Font.BOLD, 55));
+        StdDraw.setFont(new Font("Arial", Font.BOLD, 55*2));
         if (board[0].getMarker() == 2)
             StdDraw.text(.20-fix1, .20-fix, "O");
         if (board[1].getMarker() == 2)

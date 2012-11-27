@@ -1,7 +1,7 @@
 public class TicTacToe {
 
     public Box[] Board = new Box[9];
-    int NrOfGames = 0;
+    int NrOfMoves = 0;                  //used for draw
     public String Playmore = "Y";
     public Player P1 = new Player();
     public Player P2 = new Player();
@@ -9,13 +9,14 @@ public class TicTacToe {
  
     public void playTicTacToe() {
         //The main function
-        while (Playmore != "n" && Playmore != "N") {
+        GaUI GUI = new GaUI();
+        GUI.DrawFrame(256*2,256*2);
+        while (true) {
             prepairPlayers();
             prepairBoard();
-            GaUI GUI = new GaUI();
-            GUI.DrawFrame(256,256);
             GUI.DrawCanvas();
-            while (!P1.won && !P2.won){ //medan enginn er að vinna
+            GUI.DrawToBoard(Board);
+            while (!P1.won && !P2.won && NrOfMoves < 8){ //medan enginn er að vinna
                 if (StdDraw.mousePressed()) {
                     double x = StdDraw.mouseX();
                     double y = StdDraw.mouseY();
@@ -23,12 +24,14 @@ public class TicTacToe {
                     switchPl(P1,P2);
                     GUI.DrawToBoard(Board);
                     checkWin(P1,P2,Board);
+                    NrOfMoves++;
                 }
+            }
         }
-    }
     }
     private void prepairBoard() {
         int i = 0;
+        NrOfMoves = 0;
         //Marker mark = new Marker();
         //Marker.
         while (i < 9){
@@ -37,12 +40,13 @@ public class TicTacToe {
             i++;
         }
     }
-
     public void prepairPlayers() {
         P1.setName("Player One");
         P2.setName("Player Two");
         P1.isTurn = true;
         P2.isTurn = false;
+        P1.won = false;
+        P2.won = false;
     }
 
     public void checkWin(Player P1, Player P2, Box[] board) {
@@ -62,21 +66,21 @@ public class TicTacToe {
             P1.won = true;
         if (board[6].getMarker()==1 && board[7].getMarker()==1 && board[8].getMarker()==1)
             P1.won = true;
-        if (board[0].getMarker()==2 && board[4].getMarker()==1 && board[8].getMarker()==1)
+        if (board[0].getMarker()==2 && board[4].getMarker()==2 && board[8].getMarker()==2)
             P2.won = true;
-        if (board[2].getMarker()==1 && board[4].getMarker()==1 && board[6].getMarker()==1)
+        if (board[2].getMarker()==2 && board[4].getMarker()==2 && board[6].getMarker()==2)
             P2.won = true;
-        if (board[0].getMarker()==1 && board[3].getMarker()==1 && board[6].getMarker()==1)
+        if (board[0].getMarker()==2 && board[3].getMarker()==2 && board[6].getMarker()==2)
             P2.won = true;
-        if (board[1].getMarker()==1 && board[4].getMarker()==1 && board[7].getMarker()==1)
+        if (board[1].getMarker()==2 && board[4].getMarker()==2 && board[7].getMarker()==2)
             P2.won = true;
-        if (board[2].getMarker()==1 && board[5].getMarker()==1 && board[8].getMarker()==1)
+        if (board[2].getMarker()==2 && board[5].getMarker()==2 && board[8].getMarker()==2)
             P2.won = true;
-        if (board[0].getMarker()==1 && board[1].getMarker()==1 && board[2].getMarker()==1)
+        if (board[0].getMarker()==2 && board[1].getMarker()==2 && board[2].getMarker()==2)
             P2.won = true;
-        if (board[3].getMarker()==1 && board[4].getMarker()==1 && board[5].getMarker()==1)
+        if (board[3].getMarker()==2 && board[4].getMarker()==2 && board[5].getMarker()==2)
             P2.won = true;
-        if (board[6].getMarker()==1 && board[7].getMarker()==1 && board[8].getMarker()==1)
+        if (board[6].getMarker()==2 && board[7].getMarker()==2 && board[8].getMarker()==2)
             P2.won = true;
     }
 
@@ -86,9 +90,9 @@ public class TicTacToe {
     }
 
     public static void main(String[] args) {
-        System.out.println("Welcome to TicTacToe");
+        //System.out.println("Welcome to TicTacToe");
         TicTacToe newgame = new TicTacToe();
         newgame.playTicTacToe();
-        System.out.println("Thanks for playing TicTacToe " + newgame.NrOfGames + " times!");
+        //System.out.println("Thanks for playing TicTacToe " + newgame.NrOfGames + " times!");
     }
 }
