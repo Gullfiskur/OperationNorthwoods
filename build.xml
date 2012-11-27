@@ -1,78 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project name="TTT" default="compile" basedir=".">
+<path id="src.path">    
+    <pathelement path="src/"/>
+</path>
 
+<path id="compile.path">
+    <path refid="src.path"/>
+    <fileset dir="lib/">
+        <include name="**/*.jar"/>
+    </fileset>
+</path>
 
+<path id="unit.test.path">
+    <path refid="compile.path"/>
+    <pathelement path="test/"/>
+</path>
 
-    <target name="clean">
-        <delete dir="target" failonerror="true"/>
-    </target>
+<target name="compile">
+    <javac destdir="bin">
+        <src path="src"/>
+        <classpath refid="compile.path"/>
+    </javac>
+</target>
 
-    <target name="compile">
-        <mkdir dir="target/classes"/>
-        <javac includeantruntime="false" srcdir="${basedir}/src" includes="**/*.java" destdir="target/classes"/>
-    </target>
+<target name="compileUnitTests" depends="compile">
+    <javac srcdir="test/" destdir="bin">
+        <classpath refid="unit.test.path"/>
+    </javac>
+</target>
 
-    <path id="test.classpath.id">
-        <pathelement location="target/classes"/>
-        <fileset dir="${basedir}/lib">
-            <include name="junit*.jar"/>
-        </fileset>
-    </path>
+<target name="runUnitTests" depends="compileUnitTests">
+    <junit printsummary="yes" haltonfailure="no">
+    <jvmarg value="-Dfile.encoding=UTF-8"/>
+        <classpath refid="unit.test.path"/>
 
-    <target name="compile-tests">
-       
-		 <path id="test.classpath.id">
-        <pathelement location="target/classes"/>
-        <fileset dir="${basedir}/lib">
-            <include name="junit*.jar"/>
-        </fileset>
-    </path>
+        <formatter type="xml"/>
 
-
-	   <mkdir dir="target/testclasses"/>
-        <javac  includeantruntime="false" srcdir="${basedir}/src/test" includes="**/*.java" destdir="target/testclasses">
-            <classpath refid="test.classpath.id"/>
-        </javac>
-		
-		
-    </target>
-
-    <target name="unittest" depends="compile-tests">
-        <junit dir="${basedir}/lib/" haltonerror="true" haltonfailure="true">
-		
-		   <classpath refid="test.classpath.id"/>
-            <classpath>
-                <pathelement location="target/testclasses"/>
-            </classpath>
-            <test name="GulliTest"/>
-            <formatter type="brief" usefile="false"/>
-        </junit>
-    </target>
-
-    <target name="install">
-        <echo message="Installing TTT to ${user.home}/temp/TTT"/>
-        <copy todir="${user.home}/temp/TTT" overwrite="true">
-            <fileset dir="${basedir}/doc">
-                <include name="*"/>
+        <batchtest fork="yes" todir="${this.report}">
+            <fileset dir="test">
+                <include name="${test.pattern}"/>
+                <exclude name="**/AllTests.class"/>
+                <exclude name="**/*$*.class"/>
             </fileset>
-            <fileset dir="${basedir}/bin">
-                <include name="*"/>
-            </fileset>
-            <fileset dir="${basedir}/target">
-                <include name="classes/**/*"/>
-            </fileset>
-        </copy>
-        <exec executable="chmod" osfamily="unix">
-            <arg value="+xxx"/>
-            <arg value="${user.home}/temp/helloworld/helloworld.sh"/>
-        </exec>
-    </target>
-
-    <target name="execute">
-        <exec osfamily="unix" dir="${user.home}/temp/helloworld/" executable="${user.home}/temp/helloworld/helloworld.sh"/>
-        <exec osfamily="windows" dir="${user.home}/temp/helloworld/" executable="${user.home}/temp/helloworld/helloworld.bat"/>
-    </target>
-
-    <target name="all" depends="clean, compile, compile-tests, unittest, install, execute"/>
-
-</project>
+        </batchtest>
+    </junit>
+</target>
