@@ -19,7 +19,7 @@ public class BoxTest {
 
         assertEquals(boxtest.place(marktest),true);
 
-        assertEquals(boxtest.place(marktest),true);
+        assertEquals(boxtest.place(marktest),false);
 
 
 
