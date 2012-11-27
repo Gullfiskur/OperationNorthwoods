@@ -24,20 +24,16 @@ public class Buttons extends JFrame implements ActionListener{
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //setVisible(true);
 
+
     }
     public void  actionPerformed(ActionEvent a) {
            if ("play".equals(a.getActionCommand()))  {
-            for(int i = 0; true; i++) {
-                System.out.println(i);
-           // newgame.playTicTacToe();
+
             }
         }   else {
-               setVisible(false);
+
 
            }
 
-    }
-    public static void main(String[] args){
-        new Buttons();
     }
 }

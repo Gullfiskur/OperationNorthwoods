@@ -8,10 +8,12 @@ public class TicTacToe {
     public boolean testing = false;     //used for TicTacToeTest
     public double x;
     public double y;
+    public boolean stop = false;
 
     public void playTicTacToe() {   //The function
         GaUI GUI = new GaUI();
         GUI.DrawFrame(450,450);
+
         boolean play = true;
         while (play) {
             prepairPlayers();
@@ -32,9 +34,11 @@ public class TicTacToe {
                     GUI.DrawToBoard(Board);
                     checkWin(P1,P2,Board);
                     NrOfMoves++;
+
                 }
             }
-
+            play = false;
+            Buttons b = new Buttons();
 
         }
     }
