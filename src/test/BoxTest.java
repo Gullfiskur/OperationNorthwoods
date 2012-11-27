@@ -1,6 +1,5 @@
 
 
-import junit.framework.TestCase;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
@@ -11,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 * Time: 19:24
 * To change this template use File | Settings | File Templates.
 */
-public class BoxTest  extends TestCase{
+public class BoxTest {
     @Test
     public void testPlace() throws Exception {
         Box boxtest = new Box();

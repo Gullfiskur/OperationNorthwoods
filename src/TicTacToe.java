@@ -39,9 +39,10 @@ public class TicTacToe {
             }
             play = false;
             Buttons b = new Buttons();
+            System.out.println(b.retry);
             if(b.retry) {
-                play = true;
-        }
+            play = true;
+            }
     }
     }
     public void prepairBoard() {
