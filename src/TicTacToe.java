@@ -22,7 +22,7 @@ public class TicTacToe {
                     GUI.makeMoveMouse(x,y,P1,Board);
                     switchPl(P1,P2);
                     GUI.DrawToBoard(Board);
-                    checkWin();
+                    checkWin(P1,P2,Board);
                 }
         }
     }
@@ -45,8 +45,39 @@ public class TicTacToe {
         P2.isTurn = false;
     }
 
-    public int checkWin() {
-              return 0;
+    public void checkWin(Player P1, Player P2, Box[] board) {
+        if (board[0].getMarker()==1 && board[4].getMarker()==1 && board[8].getMarker()==1)
+            P1.won = true;
+        if (board[2].getMarker()==1 && board[4].getMarker()==1 && board[6].getMarker()==1)
+            P1.won = true;
+        if (board[0].getMarker()==1 && board[3].getMarker()==1 && board[6].getMarker()==1)
+            P1.won = true;
+        if (board[1].getMarker()==1 && board[4].getMarker()==1 && board[7].getMarker()==1)
+            P1.won = true;
+        if (board[2].getMarker()==1 && board[5].getMarker()==1 && board[8].getMarker()==1)
+            P1.won = true;
+        if (board[0].getMarker()==1 && board[1].getMarker()==1 && board[2].getMarker()==1)
+            P1.won = true;
+        if (board[3].getMarker()==1 && board[4].getMarker()==1 && board[5].getMarker()==1)
+            P1.won = true;
+        if (board[6].getMarker()==1 && board[7].getMarker()==1 && board[8].getMarker()==1)
+            P1.won = true;
+        if (board[0].getMarker()==2 && board[4].getMarker()==1 && board[8].getMarker()==1)
+            P2.won = true;
+        if (board[2].getMarker()==1 && board[4].getMarker()==1 && board[6].getMarker()==1)
+            P2.won = true;
+        if (board[0].getMarker()==1 && board[3].getMarker()==1 && board[6].getMarker()==1)
+            P2.won = true;
+        if (board[1].getMarker()==1 && board[4].getMarker()==1 && board[7].getMarker()==1)
+            P2.won = true;
+        if (board[2].getMarker()==1 && board[5].getMarker()==1 && board[8].getMarker()==1)
+            P2.won = true;
+        if (board[0].getMarker()==1 && board[1].getMarker()==1 && board[2].getMarker()==1)
+            P2.won = true;
+        if (board[3].getMarker()==1 && board[4].getMarker()==1 && board[5].getMarker()==1)
+            P2.won = true;
+        if (board[6].getMarker()==1 && board[7].getMarker()==1 && board[8].getMarker()==1)
+            P2.won = true;
     }
 
     public void switchPl(Player P1, Player P2) {
