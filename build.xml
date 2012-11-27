@@ -71,8 +71,12 @@
             </manifest>
         </jar>
     </target>
-	
 
+
+
+    <target name="run" depends="clean, compile, compile-tests, jar">
+    <java jar="c:/TicTacToe/TTT.jar" fork="true"/>
+    </target>
     <target name="execute">
         <exec osfamily="unix" dir="${user.home}/temp/helloworld/" executable="${user.home}/temp/helloworld/helloworld.sh"/>
         <exec osfamily="windows" dir="${user.home}/temp/helloworld/" executable="${user.home}/temp/helloworld/helloworld.bat"/>
