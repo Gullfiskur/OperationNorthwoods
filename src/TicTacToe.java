@@ -3,12 +3,13 @@ public class TicTacToe {
     public Box[] Board = new Box[9];
     int NrOfMoves = 0;                  //used for draw
     public String Playmore = "Y";
-    public boolean testing = false;     //used for TicTacToeTest
     public Player P1 = new Player();
     public Player P2 = new Player();
- 
-    public void playTicTacToe() {
-        //The main function
+    public boolean testing = false;     //used for TicTacToeTest
+    public double x;
+    public double y;
+
+    public void playTicTacToe() {   //The function
         GaUI GUI = new GaUI();
         GUI.DrawFrame(450,450);
         while (true) {
@@ -18,8 +19,9 @@ public class TicTacToe {
             GUI.DrawToBoard(Board);
             while (!P1.won && !P2.won && NrOfMoves < 9){ //medan enginn er ad vinna eda jafntefli
                 if (StdDraw.mousePressed() || testing) {
-                    double x = StdDraw.mouseX();
-                    double y = StdDraw.mouseY();
+                    if (!testing){
+                    x = StdDraw.mouseX();
+                    y = StdDraw.mouseY();}
                     GUI.makeMoveMouse(x,y,P1,Board);
                     switchPl(P1,P2);
                     GUI.DrawToBoard(Board);
@@ -29,7 +31,7 @@ public class TicTacToe {
             }
         }
     }
-    private void prepairBoard() {
+    public void prepairBoard() {
         int i = 0;
         NrOfMoves = 0;
         //Marker mark = new Marker();
