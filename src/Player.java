@@ -10,6 +10,7 @@ public class Player {
     public int nrOfMoves = 0;
     public boolean isTurn = false;
     private String name = "A";
+    public boolean won = false;
 
     //Default constructor
     public void Player(String name, boolean turn){
@@ -28,12 +29,13 @@ public class Player {
             this.isTurn = true;
         else this.isTurn = false;
     }
-    public boolean isTurn(){
+    public boolean isTurn(boolean turn){
+        this.isTurn = turn;
         return isTurn;
     }
 
-    public static void debug() {
+    /*public static void debug() {
         System.out.println("Debug");
         Player.debug();
-    }
+    }*/
 }

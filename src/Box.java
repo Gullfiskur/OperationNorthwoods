@@ -14,20 +14,17 @@ public class Box {
 	private Boolean occupied() {
 	   return occupied;
 	}
-	
+
 	public int getMarker() {
 	    return mark.Marker;
 	}
-	
-	public boolean place(Marker x) {
-	    if (!(occupied))
-        {
-        mark = x;
-        occupied = true;
 
+	public boolean place(Marker x) {
+	    if (!(occupied)) {
+            mark = x;
+            occupied = true;
             return occupied;
         }
-           return false;
-
+        return false;
 	}
 }
