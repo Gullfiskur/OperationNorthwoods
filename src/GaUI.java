@@ -2,6 +2,15 @@ import java.awt.*;
 
 public class GaUI {
 
+    public void ShowWinner()
+    {
+
+
+
+    }
+
+
+
     public void DrawFrame(int X, int Y) {
         StdDraw.setCanvasSize(Y, X);
         StdDraw.clear(StdDraw.DARK_GRAY);

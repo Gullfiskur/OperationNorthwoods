@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="helloworld" default="compile" basedir=".">
-
+<project name="TTT" default="compile" basedir=".">
+	
+	<path id="library.algs4.classpath">
+	<pathelement location="${basedir}/lib/algs4.jar"/>
+	</path>
+		
+	
+	
     <target name="clean">
         <delete dir="target" failonerror="true"/>
     </target>
@@ -8,19 +14,22 @@
     <target name="compile">
         <mkdir dir="target/classes"/>
         <javac srcdir="${basedir}/src" includes="**/*.java" destdir="target/classes"/>
+		
     </target>
 
     <path id="test.classpath.id">
         <pathelement location="target/classes"/>
         <fileset dir="${basedir}/lib">
             <include name="junit*.jar"/>
+			 <pathelement location="${basedir}/lib/junit-4.7.jar"/>
         </fileset>
     </path>
 
     <target name="compile-tests">
         <mkdir dir="target/testclasses"/>
-        <javac srcdir="${basedir}/test" includes="**/*.java" destdir="target/testclasses">
+        <javac srcdir="${basedir}/src/test" includes="**/*.java" destdir="target/testclasses">
             <classpath refid="test.classpath.id"/>
+			
         </javac>
     </target>
 

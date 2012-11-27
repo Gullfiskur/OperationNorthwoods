@@ -12,11 +12,11 @@ public boolean retry;
         //setSize(300,400);
         Frame frame = new Frame("Gaman");
         JButton playagain = new JButton("Play Again");
-        playagain.setActionCommand("play");
         frame.add(playagain);
+        playagain.setActionCommand("play");
         JButton cancel = new JButton("Cancel");
-        cancel.setActionCommand("stop");
         frame.add(cancel);
+        cancel.setActionCommand("stop");
         frame.setLayout(new FlowLayout());
         frame.setSize(200, 100);
         frame.setVisible(true);
@@ -25,32 +25,19 @@ public boolean retry;
         //add(startButton);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //setVisible(true);
-        System.out.println("hallo");
+
 
     }
-    public boolean playAgain(ActionEvent a){
-        if ("play".equals(a.getActionCommand()))  {
-            System.out.println(a.getActionCommand());
-            return true;
-
-        }
-        else
-            System.out.println("Cancel");
-            return false;
-    }
-
     public void  actionPerformed(ActionEvent a) {
            if ("play".equals(a.getActionCommand()))  {
              this.retry = true;
 
-               System.out.println(a.getActionCommand());
-               return;
+               System.out.println("Play Again");
 
            }
-           else
-              // System.out.println("Cancel");
-               this.retry = false;
-
+           if("stop".equals(a.getActionCommand())) {
+               System.out.println("Cancel");
+           }
 
         }
     }
