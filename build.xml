@@ -24,6 +24,15 @@
         <javac  includeantruntime="false" srcdir="${basedir}/src/test" includes="**/*.java" destdir="target/testclasses">
             <classpath refid="test.classpath.id"/>
         </javac>
+		
+	  <path id="test.classpath.id">
+        <pathelement location="target/classes"/>
+        <fileset dir="${basedir}/lib">
+            <include name="junit*.jar"/>
+        </fileset>
+    </path>
+		
+		
     </target>
 
     <target name="unittest" depends="compile-tests">
