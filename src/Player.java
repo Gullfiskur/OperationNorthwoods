@@ -1,10 +1,3 @@
-/**
- * Created with IntelliJ IDEA.
- * User: Notandi
- * Date: 25.11.2012
- * Time: 14:35
- * To change this template use File | Settings | File Templates.
- */
 
 public class Player {
     public int nrOfMoves = 0;
