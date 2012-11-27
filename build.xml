@@ -1,45 +1,25 @@
-<path id="src.path">    
-    <pathelement path="src/"/>
-</path>
+<project>
 
-<path id="compile.path">
-    <path refid="src.path"/>
-    <fileset dir="lib/">
-        <include name="**/*.jar"/>
-    </fileset>
-</path>
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
 
-<path id="unit.test.path">
-    <path refid="compile.path"/>
-    <pathelement path="test/"/>
-</path>
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"/>
+    </target>
 
-<target name="compile">
-    <javac destdir="bin">
-        <src path="src"/>
-        <classpath refid="compile.path"/>
-    </javac>
-</target>
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/HelloWorld.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="oata.HelloWorld"/>
+            </manifest>
+        </jar>
+    </target>
 
-<target name="compileUnitTests" depends="compile">
-    <javac srcdir="test/" destdir="bin">
-        <classpath refid="unit.test.path"/>
-    </javac>
-</target>
+    <target name="run">
+        <java jar="build/jar/HelloWorld.jar" fork="true"/>
+    </target>
 
-<target name="runUnitTests" depends="compileUnitTests">
-    <junit printsummary="yes" haltonfailure="no">
-    <jvmarg value="-Dfile.encoding=UTF-8"/>
-        <classpath refid="unit.test.path"/>
-
-        <formatter type="xml"/>
-
-        <batchtest fork="yes" todir="${this.report}">
-            <fileset dir="test">
-                <include name="${test.pattern}"/>
-                <exclude name="**/AllTests.class"/>
-                <exclude name="**/*$*.class"/>
-            </fileset>
-        </batchtest>
-    </junit>
-</target>
+</project>
