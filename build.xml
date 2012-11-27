@@ -17,7 +17,7 @@
         <mkdir dir="target/classes"/>
         <javac srcdir="${basedir}/src" includes="**/*.java" destdir="target/classes">
 		 <classpath refid="test.classpath.id"/>
-		 
+		 </javac>
     </target>
 
     <path id="test.classpath.id">
