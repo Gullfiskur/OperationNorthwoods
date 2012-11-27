@@ -17,9 +17,8 @@ public class TicTacToeTest {
         TicTacToe testgame = new TicTacToe();
         int i = 0;
         while (i < 10){
-
-            testgame.x = StdRandom.uniform(0.0, 1.0);
-            testgame.y = StdRandom.uniform(0.0, 1.0);
+            //testgame.x = StdRandom.uniform(0.2, 0.8);
+            //testgame.y = StdRandom.uniform(0.2, 0.8);
             testgame.testing = true;
             testgame.playTicTacToe();
             i++;

@@ -22,6 +22,10 @@ public class TicTacToe {
                     if (!testing){
                     x = StdDraw.mouseX();
                     y = StdDraw.mouseY();}
+                    else {
+                        x = StdRandom.uniform(0.2, 0.8);
+                        y = StdRandom.uniform(0.2, 0.8);
+                    }
                     GUI.makeMoveMouse(x,y,P1,Board);
                     switchPl(P1,P2);
                     GUI.DrawToBoard(Board);
