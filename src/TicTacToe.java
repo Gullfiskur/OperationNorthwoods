@@ -102,6 +102,6 @@ public class TicTacToe {
         //System.out.println("Welcome to TicTacToe");
         TicTacToe newgame = new TicTacToe();
         newgame.playTicTacToe();
-        //System.out.println("Thanks for playing TicTacToe");
+        //System.out.println("Thanks for playing ");
     }
 }
