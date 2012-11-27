@@ -12,11 +12,18 @@ import static org.junit.Assert.assertTrue;
 * To change this template use File | Settings | File Templates.
 */
 public class TicTacToeTest {
-    /*@Test
+    @Test
     public void testPlayTicTacToe() throws Exception {
         TicTacToe testgame = new TicTacToe();
-        testgame.playTicTacToe();
-    }*/
+        int i = 0;
+        while (i < 10){
+            //testgame.x = StdRandom.uniform(0.2, 0.8);
+            //testgame.y = StdRandom.uniform(0.2, 0.8);
+            testgame.testing = true;
+            testgame.playTicTacToe();
+            i++;
+        }
+    }
 
     @Test
     public void testPrepairPlayers() throws Exception {
@@ -41,65 +48,53 @@ public class TicTacToeTest {
         testMarker2.Marker = 2;
 
         testgame.prepairPlayers();
-
-      /*if (board[0].getMarker()==1 && board[4].getMarker()==1 && board[8].getMarker()==1)
-        if (board[2].getMarker()==1 && board[4].getMarker()==1 && board[6].getMarker()==1)
-        if (board[0].getMarker()==1 && board[3].getMarker()==1 && board[6].getMarker()==1)
-        if (board[1].getMarker()==1 && board[4].getMarker()==1 && board[7].getMarker()==1)
-        if (board[2].getMarker()==1 && board[5].getMarker()==1 && board[8].getMarker()==1)
-        if (board[0].getMarker()==1 && board[1].getMarker()==1 && board[2].getMarker()==1)
-        if (board[3].getMarker()==1 && board[4].getMarker()==1 && board[5].getMarker()==1)
-        if (board[6].getMarker()==1 && board[7].getMarker()==1 && board[8].getMarker()==1)
-
-        if (board[0].getMarker()==2 && board[4].getMarker()==2 && board[8].getMarker()==2)
-        if (board[2].getMarker()==2 && board[4].getMarker()==2 && board[6].getMarker()==2)
-        if (board[0].getMarker()==2 && board[3].getMarker()==2 && board[6].getMarker()==2)
-        if (board[1].getMarker()==2 && board[4].getMarker()==2 && board[7].getMarker()==2)
-        if (board[2].getMarker()==2 && board[5].getMarker()==2 && board[8].getMarker()==2)
-        if (board[0].getMarker()==2 && board[1].getMarker()==2 && board[2].getMarker()==2)
-        if (board[3].getMarker()==2 && board[4].getMarker()==2 && board[5].getMarker()==2)
-        if (board[6].getMarker()==2 && board[7].getMarker()==2 && board[8].getMarker()==2)*/
+        testgame.prepairBoard();
+        //Player One wins
         testgame.Board[0].setMarker(testMarker1);
         testgame.Board[4].setMarker(testMarker1);
         testgame.Board[8].setMarker(testMarker1);
         testgame.checkWin(testgame.P1, testgame.P2, testgame.Board);
         assertTrue(testgame.P1.won == true);
-        //testgame.prepairPlayers();
-
+        testgame.prepairPlayers();
+        testgame.prepairBoard();
+        //Player One wins
         testgame.Board[1].setMarker(testMarker1);
         testgame.Board[4].setMarker(testMarker1);
         testgame.Board[7].setMarker(testMarker1);
         testgame.checkWin(testgame.P1, testgame.P2, testgame.Board);
         assertTrue(testgame.P1.won == true);
-        //testgame.prepairPlayers();
-
+        testgame.prepairPlayers();
+        testgame.prepairBoard();
+        //Player One wins
         testgame.Board[6].setMarker(testMarker1);
         testgame.Board[7].setMarker(testMarker1);
         testgame.Board[8].setMarker(testMarker1);
         testgame.checkWin(testgame.P1, testgame.P2, testgame.Board);
         assertTrue(testgame.P1.won == true);
-        //testgame.prepairPlayers();
-
+        testgame.prepairPlayers();
+        testgame.prepairBoard();
+        //Player Two wins
         testgame.Board[0].setMarker(testMarker2);
         testgame.Board[4].setMarker(testMarker2);
         testgame.Board[8].setMarker(testMarker2);
         testgame.checkWin(testgame.P1, testgame.P2, testgame.Board);
         assertTrue(testgame.P2.won == true);
-        //testgame.prepairPlayers();
-
+        testgame.prepairPlayers();
+        testgame.prepairBoard();
+        //Player Two wins
         testgame.Board[1].setMarker(testMarker2);
         testgame.Board[4].setMarker(testMarker2);
         testgame.Board[7].setMarker(testMarker2);
         testgame.checkWin(testgame.P1, testgame.P2, testgame.Board);
         assertTrue(testgame.P2.won == true);
-        //testgame.prepairPlayers();
-
+        testgame.prepairPlayers();
+        testgame.prepairBoard();
+        //Player Two wins
         testgame.Board[6].setMarker(testMarker2);
         testgame.Board[7].setMarker(testMarker2);
         testgame.Board[8].setMarker(testMarker2);
         testgame.checkWin(testgame.P1, testgame.P2, testgame.Board);
         assertTrue(testgame.P2.won == true);
-        //testgame.prepairPlayers();
     }
 
     @Test
