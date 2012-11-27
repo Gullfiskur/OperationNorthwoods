@@ -12,12 +12,13 @@ public class TicTacToe {
     public void playTicTacToe() {   //The function
         GaUI GUI = new GaUI();
         GUI.DrawFrame(450,450);
-        while (true) {
+        boolean play = true;
+        while (play) {
             prepairPlayers();
             prepairBoard();
             GUI.DrawCanvas();
             GUI.DrawToBoard(Board);
-            while (!P1.won && !P2.won && NrOfMoves < 9){ //medan enginn er ad vinna eda jafntefli
+            while ((!P1.won && !P2.won ) && (NrOfMoves < 9)){ //medan enginn er ad vinna eda jafntefli
                 if (StdDraw.mousePressed() || testing) {
                     if (!testing){
                     x = StdDraw.mouseX();
@@ -33,6 +34,8 @@ public class TicTacToe {
                     NrOfMoves++;
                 }
             }
+
+
         }
     }
     public void prepairBoard() {
