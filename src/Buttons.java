@@ -6,7 +6,7 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class Buttons extends JFrame implements ActionListener{
 
-public boolean retry = false;
+public boolean retry;
 
     public Buttons(){
         //setSize(300,400);
@@ -30,14 +30,13 @@ public boolean retry = false;
     }
     public void  actionPerformed(ActionEvent a) {
            if ("play".equals(a.getActionCommand()))  {
-             retry = true;
+             this.retry = true;
 
                System.out.println("Play Again");
 
            }
            if("stop".equals(a.getActionCommand())) {
                System.out.println("Cancel");
-
            }
 
         }
