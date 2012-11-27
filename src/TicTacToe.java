@@ -8,7 +8,7 @@ public class TicTacToe {
 
  
     public void playTicTacToe() {
-        //The main function
+        //main function
         GaUI GUI = new GaUI();
         GUI.DrawFrame(256*2,256*2);
         while (true) {
