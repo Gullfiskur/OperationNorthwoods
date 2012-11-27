@@ -20,7 +20,7 @@ public class BoxTest  extends TestCase{
 
         assertEquals(boxtest.place(marktest),true);
 
-        assertEquals(boxtest.place(marktest),false);
+        assertEquals(boxtest.place(marktest),true);
 
 
 
