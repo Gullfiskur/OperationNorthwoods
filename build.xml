@@ -3,8 +3,6 @@
 
 
 
-
-
     <target name="clean">
         <delete dir="target" failonerror="true"/>
     </target>
@@ -22,16 +20,26 @@
     </path>
 
     <target name="compile-tests">
-        <mkdir dir="target/testclasses"/>
+       
+		 <path id="test.classpath.id">
+        <pathelement location="target/classes"/>
+        <fileset dir="${basedir}/lib">
+            <include name="junit*.jar"/>
+        </fileset>
+    </path>
+
+
+	   <mkdir dir="target/testclasses"/>
         <javac  includeantruntime="false" srcdir="${basedir}/src/test" includes="**/*.java" destdir="target/testclasses">
             <classpath refid="test.classpath.id"/>
         </javac>
+		
+		
     </target>
 
     <target name="unittest" depends="compile-tests">
         <junit dir="${basedir}/lib/" haltonerror="true" haltonfailure="true">
 		
-			<classpath location="${instrumented.dir}" />
 		   <classpath refid="test.classpath.id"/>
             <classpath>
                 <pathelement location="target/testclasses"/>
