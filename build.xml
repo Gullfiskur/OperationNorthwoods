@@ -29,7 +29,7 @@
     </target>
 
     <target name="unittest" depends="compile-tests">
-        <junit dir="${basedir}/target/junit" haltonerror="true" haltonfailure="true">
+        <junit dir="${basedir}/lib/" haltonerror="true" haltonfailure="true">
 		
 			<classpath location="${instrumented.dir}" />
 		   <classpath refid="test.classpath.id"/>
