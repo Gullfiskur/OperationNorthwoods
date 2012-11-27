@@ -67,7 +67,7 @@
         <jar destfile="../TicTacToe/TTT.jar">
             <fileset dir="${basedir}/target/classes" includes="**/*.class"/>
             <manifest>
-                <attribute name="TicTacToe" value="TicTacToe.Main"/>
+                <attribute name="TicTacToe" value="TicTacToe"/>
             </manifest>
         </jar>
     </target>
