@@ -64,10 +64,10 @@
 	
 	
 	  <target name="jar" depends="compile,compile-tests" description="create a Jar file for the application">
-        <jar destfile="../TicTacToe/TTT.jar">
+        <jar destfile="c:/TicTacToe/TTT.jar">
             <fileset dir="${basedir}/target/classes" includes="**/*.class"/>
             <manifest>
-                <attribute name="TicTacToe" value="TicTacToe.TickTackToe"/>
+                <attribute name="Main-Class" value="TicTacToe.TicTacToe"/>
             </manifest>
         </jar>
     </target>
